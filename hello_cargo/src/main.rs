@@ -1,15 +1,20 @@
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
 fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
 
-    let guess: u32 = "42".parse().expect("Not a number!");
-    let x: i32 = 32;
-    let y: char = 'A';
-    let c    = "Asss";
-    let mut s = String::from("hello");
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(&rect1)
+    );
+}
 
-    s.push_str(", world!"); // push_str() appends a literal to a String
-
-    println!("{s}"); // This will print `hello, world!`
-    
-
-
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
 }
